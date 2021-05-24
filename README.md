@@ -1,7 +1,4 @@
-[![Build Status](https://travis-ci.org/joeldenning/coexisting-angular-microfrontends.svg?branch=master)](https://travis-ci.org/joeldenning/coexisting-angular-microfrontends)
-
 # Coexisting Angular Microfrontends
-Demo: http://coexisting-angular-microfrontends.surge.sh
 
 This is a starter-kit / example repository for people who want to have multiple angular microfrontends coexist within a single page. Each
 of the angular applications was created and is managed by Angular CLI.
@@ -63,7 +60,7 @@ npm install
 npm start
 ```
 
-Now go to http://localhost:4200 in a browser. Note that you can change any of the ports for the projects by modifying the Import Map inside of
+Now go to http://localhost:4210 in a browser. Note that you can change any of the ports for the projects by modifying the Import Map inside of
 root-html-file/index.html.
 
 If you get serious about deploying your code, you'll want to make it no longer necessary to boot up all of the apps in order to do anything.
