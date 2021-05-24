@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src *  data: blob: 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * data: blob: 'unsafe-inline'; font-src * data: blob: 'unsafe-inline';">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Your application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="importmap-type" content="systemjs-importmap">
+    <style>.main-content{width: calc(100% - 240px); position: relative; left: 200px; padding: 0px 20px;}</style>
+    <script type="systemjs-importmap">
+      {
+        "imports": {
+          "app1": "http://localhost:4207/main.js",
+          "app2": "http://localhost:4202/main.js",
+          "navbar": "http://localhost:4300/main.js",
+          "single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/5.5.0/system/single-spa.min.js",
+          "single-spa-layout": "https://unpkg.com/single-spa-layout@1.0.0-beta.2/dist/system/single-spa-layout.min.js"
+        }
+      }
+    </script>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/single-spa/5.5.0/system/single-spa.min.js" as="script" crossorigin="anonymous" />
+    <script src='https://unpkg.com/core-js-bundle@3.1.4/minified.js'></script>
+    <script src="https://unpkg.com/zone.js@0.10.3/dist/zone.js"></script>
+    <script src="https://unpkg.com/import-map-overrides@1.15.1/dist/import-map-overrides.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/system.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/amd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/named-exports.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/named-register.min.js"></script>
+    <template id="single-spa-layout">
+      <single-spa-router>
+        <nav class="topnav">
+          <application name="navbar"></application>
+        </nav>
+        <div class="main-content">
+          <!-- <route path="/">
+            <application name="app1"></application>
+          </route> -->
+          <route path="app1">
+            <application name="app1"></application>
+          </route>
+          <route path="app2">
+            <application name="app2"></application>
+          </route>
+        </div>
+      </single-spa-router>
+    </template>
+  </head>
+  <body>
+    <script>
+      Promise.all([System.import('single-spa'), System.import('single-spa-layout')]).then(([singleSpa, singleSpaLayout]) => {
+        const { constructApplications, constructLayoutEngine, constructRoutes } = singleSpaLayout;
+        const { registerApplication, start } = singleSpa;
+
+        const routes = constructRoutes(document.querySelector('#single-spa-layout'));
+        const applications = constructApplications({
+          routes,
+          loadApp({ name }) {
+            return System.import(name);
+          },
+        });
+        const layoutEngine = constructLayoutEngine({ routes, applications });
+        applications.forEach(registerApplication);
+        start();
+      });
+      if(location.pathname === '/'){
+        location.pathname = '/app1/dashboard';
+      }
+    </script>
+    <!-- <import-map-overrides-full></import-map-overrides-full> -->
+  </body>
+</html>

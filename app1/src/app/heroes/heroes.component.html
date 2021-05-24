@@ -1,0 +1,21 @@
+<h2>My CIPS</h2>
+
+<div>
+  <label for="new-hero">CIP name: </label>
+  <input id="new-hero" #heroName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="add-button" (click)="add(heroName.value); heroName.value=''">
+    Add CIP
+  </button>
+</div>
+
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/app1/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+    <button class="delete" title="delete hero"
+      (click)="delete(hero)">x</button>
+  </li>
+</ul>

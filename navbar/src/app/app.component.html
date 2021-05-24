@@ -1,0 +1,12 @@
+<navbar-primary-nav></navbar-primary-nav>
+<router-outlet></router-outlet>
+<mat-sidenav-content>
+  <div class="docs-component-sidenav-inner-content">
+    <div class="docs-component-sidenav">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/app1/dashboard" (click)="clickActive('app1')" class="{{active=='app1'?'active':''}}"><i class="material-icons">home</i> App 1 </a>
+        <a mat-list-item routerLink="/app2" (click)="clickActive('app2')" class="{{active=='app2'?'active':''}}"><i class="material-icons">search</i> App 2 </a>
+     </mat-nav-list>
+    </div>
+  </div>
+</mat-sidenav-content>
