@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "cip-app": "http://localhost:4207/main.js",
+    "review-app": "http://localhost:4202/main.js",
+    "main": "http://localhost:4203/main.js"
+  }
+}

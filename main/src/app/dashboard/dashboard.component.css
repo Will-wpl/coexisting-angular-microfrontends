@@ -1,0 +1,223 @@
+.cip-header-bg{
+  box-shadow: 0 3px 6px #00000012!important;
+  z-index: 0;
+  width: 100%;
+  height: 14.44vh;
+  background: linear-gradient(99deg,#7500c0 0,#a100ff 100%) no-repeat padding-box;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.cip-header-bg img{
+  height: 4vh; margin: 0px 25px 0px 25px;
+}
+
+.cip-header-bg a{
+  font-size: 1.53vw; font-weight: 600;
+}
+
+.home{
+  min-height: calc(100vh - 22.21vh);
+}
+
+.home-card{
+  position: relative;
+  background-color: transparent;
+  color: #fff;
+  text-align: left;
+  display: flex;
+  width: 100%;
+  border-radius: 0;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.home-card.top{
+  height: calc((100vh - 22.21vh) * .6);
+}
+.home-card.bottom{
+  height: calc((100vh - 22.21vh) * .4);
+}
+
+.home-card-box{
+  width: 50%;
+  display: flex;
+  position: relative;
+}
+
+.img1,.img2{
+  width: 65%;
+  height: 100%;
+  display: block;
+}
+.img2{
+  width: 35%;
+}
+
+.home-card-control{
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(141deg
+,#9602fc 0,#0a96ff 100%) no-repeat padding-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  opacity: 1;
+}
+
+.home-card-control h1:hover{
+  cursor: pointer;
+  font-size: 40px;
+  transition: 0.5s all;
+}
+
+.home-card-control.bg{
+  background: url("../../assets/11416.jpg") no-repeat; 
+  background-size: cover;
+}
+.home-card-list{
+  overflow: auto;
+  margin: 0; padding: 0px;
+  width: 65%; height: 100%; background: url("../../assets/Cumulus_clouds3.jpg") no-repeat 0px 0px; background-size: cover;
+}
+
+.home-card-list.normal{
+  display: block;
+}
+.home-card-list.normal a{
+  font-size: 16px;
+}
+.home-card-list.normal p{
+  font-size: 15px; margin: 0;
+}
+
+.home-card-list li{
+  list-style: none;
+  padding: 5px 15px;
+  color: #333;
+}
+
+.home-card-list li a{
+  cursor: pointer;
+  color: #A100FF;
+  display: flex;
+  text-decoration: none;
+  justify-content: space-between;
+}
+
+.home-card-list li a span.badge{
+  text-overflow: ellipsis; white-space: nowrap;
+  overflow: hidden;
+}
+
+.home-card-list li a span.status{
+  font-size: 13px;
+  color: #fff;
+  padding: 4px;
+  background: green;
+  border-radius: 5px;
+}
+
+.home-card-list.card li{
+  width: 85%;
+  box-shadow: 0px 0px 5px #ccc;
+  margin: 20px auto;
+  border-radius: 8px;
+  background:#fff;
+  transition: 0.5s all;
+}
+
+.home-card-list.card li a{
+  display: block;
+  height: 100%;
+  padding: 10px;
+  background: url("../../assets/user.png") no-repeat right;
+  background-size: 50px;
+  color: #666;
+}
+
+.home-card-list.card li:hover{
+  box-shadow: 0px 0px 10px #666;
+}
+
+.footer{
+  background: no-repeat padding-box #fff;
+    box-shadow: 0 -3px 6px #00000017!important;
+    opacity: 1;
+    height: 7.77vh;
+    color: #707070;
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font: normal normal normal 24px/26px Graphik;
+    font-size: 1vw;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    position: relative;
+    z-index: 90;
+}
+
+.loading{
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  top: 0px;
+  left: 0px;
+}
+.loading .loader,
+.loading .loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+.loading .loader {
+  margin: 0px auto;
+  font-size: 10px;
+  position: relative;
+  top:50%;
+  margin-top: -5em;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-left: 1.1em solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

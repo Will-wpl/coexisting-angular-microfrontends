@@ -1,0 +1,15 @@
+<div *ngIf="hero" class="detail">
+  <h2>Details</h2>
+  <div class="hero-item"><span>id: </span>{{hero.Id}}</div>
+  <div class="hero-item">
+    <label for="hero-name">CIP name: {{hero.Name | uppercase}}</label>
+    <!-- <input id="hero-name" [(ngModel)]="hero.name" placeholder="New hero name"/> -->
+  </div>
+  <div class="hero-item"><span>Update Time: </span>{{hero.updateTime}}</div>
+  <div class="hero-item"><span>Comments: </span>{{hero.Comment}}</div>
+  <button (click)="goBack()">go back</button>
+  <!-- <button (click)="save()">save</button> -->
+</div>
+<div class="loading" *ngIf="loading">
+  <div class="loader">Loading...</div>
+</div>

@@ -1,0 +1,60 @@
+<div class="home">
+  <div class="home-card top">
+    <div class="home-card-box">
+      <img [src]="img1" class="img1">
+      <div class="home-card-control">
+        <h1 routerLink="/cip-app/dashboard">CIPS</h1>
+      </div>
+    </div>
+    <div class="home-card-box">
+      <ul class="home-card-list normal">
+        <li *ngFor="let hero of cips">
+          <a routerLink="/cip-app/detail/{{hero.Id}}">
+             <span>{{hero.Name}}</span>
+          </a>
+          <p>{{hero.Comment}}</p>
+          <!-- <button class="delete" title="delete hero"
+            (click)="delete(hero)">x</button> -->
+        </li>
+      </ul>
+      <img [src]="symbol" class="img2">
+    </div>
+  </div>
+  <div class="home-card bottom">
+    <div class="home-card-box">
+      <div class="home-card-control bg">
+        <h1>Users</h1>
+      </div>
+      <ul class="home-card-list card">
+        <li *ngFor="let hero of users">
+          <a>
+            <p>Name: {{hero.Name}}</p>
+            <p>Email: {{hero.EmailAddress}}</p>
+          </a>
+          <!-- <button class="delete" title="delete hero"
+            (click)="delete(hero)">x</button> -->
+        </li>
+      </ul>
+    </div>
+    <div class="home-card-box">
+      <div class="home-card-control">
+        <h1 routerLink="/review-app/dashboard">REVIEWS</h1>
+      </div>
+      <ul class="home-card-list">
+        <li *ngFor="let hero of reviews">
+          <a routerLink="/review-app/dashboard">
+            <span class="badge">{{hero.CIPName}}</span><span class="status">{{hero.Status}}</span>
+          </a>
+          <!-- <button class="delete" title="delete hero"
+            (click)="delete(hero)">x</button> -->
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  Angular MicroFrontEnd DEMO
+</div>
+<div class="loading" *ngIf="loading">
+  <div class="loader">Loading...</div>
+</div>

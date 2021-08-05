@@ -1,0 +1,7 @@
+body{
+  overflow: hidden;
+  font-family: 'Arial';
+  margin: 0;
+}
+.main-content{width: calc(100% - 240px); position: relative; left: 200px; padding: 0px 20px; height: calc(100vh - 14.44vh);
+overflow: auto;}

@@ -1,0 +1,8 @@
+{
+  "/api": {  
+    "target": "https://cipservices.azurewebsites.net", 
+    "logLevel": "debug",  
+    "changeOrigin": true, 
+    "secure":false
+  }
+}

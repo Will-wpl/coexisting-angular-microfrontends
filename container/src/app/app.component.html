@@ -1,0 +1,17 @@
+<main *ngIf="canShow">
+  <navbar-primary-nav></navbar-primary-nav>
+  <div>
+    <div class="docs-component-sidenav-inner-content {{isShow?'':'hidden'}}">
+      <div class="docs-component-sidenav">
+        <div>
+          <a mat-list-item routerLink="/main/dashboard" (click)="clickActive('main')" class="{{active=='main'?'active':''}}"><i class="material-icons">home</i> Home </a>
+          <a mat-list-item routerLink="/cip-app/dashboard" (click)="clickActive('cip-app')" class="{{active=='cip-app'?'active':''}}"><i class="material-icons">home</i> CIP Application </a>
+          <a mat-list-item routerLink="/review-app/dashboard" (click)="clickActive('review-app')" class="{{active=='review-app'?'active':''}}"><i class="material-icons">search</i> Review Application </a>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</main>

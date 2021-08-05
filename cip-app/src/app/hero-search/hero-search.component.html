@@ -1,0 +1,14 @@
+<div id="search-component">
+  <label for="search-box">Add CIP</label>
+  <textarea id="search-box" [(ngModel)]="searchBox" ></textarea>
+  <div class="btn">
+    <button class="clear" (click)="submit()">Submit</button>
+  </div>
+  <ul class="search-result">
+    <li *ngFor="let hero of heroes$ | async" >
+      <a routerLink="/detail/{{hero.id}}">
+        {{hero.name}}
+      </a>
+    </li>
+  </ul>
+</div>

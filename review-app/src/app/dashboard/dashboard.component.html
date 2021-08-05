@@ -1,0 +1,24 @@
+<div>
+  <h2>Top CIPS Table</h2>
+  <div class="heroes-menu row">
+    <table>
+      <thead>
+        <tr>
+          <th width="80">CIPId</th>
+          <th style="text-align: left;">CIPName</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of heroes; let i=index">
+          <td><div class="num">{{item.CIPId}}</div></td>
+          <td style="text-align: left;">{{item.CIPName}}</td>
+          <td><div class="status">{{item.Status}}</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="loading" *ngIf="loading">
+  <div class="loader">Loading...</div>
+</div>

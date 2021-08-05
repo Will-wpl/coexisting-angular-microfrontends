@@ -1,0 +1,26 @@
+<div class="heroes-info">
+  <h2>My CIPS</h2>
+  <div>
+    <label for="new-hero">CIP Name: </label>
+    <input id="new-cip-name" [(ngModel)]="cipModel.CIPName" placeholder="CIP NAME" />
+    <label for="new-hero">CIP Comment: </label>
+    <textarea id="new-cip-comment" [(ngModel)]="cipModel.Comment" placeholder="CIP Comments" ></textarea>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button class="add-button" (click)="add()">
+      Submit
+    </button>
+  </div>
+
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes">
+      <a routerLink="/cip-app/detail/{{hero.Id}}">
+        <span class="badge">{{hero.Id}}</span> {{hero.Name}} <span class="time">{{hero.updateTime}}</span>
+      </a>
+      <!-- <button class="delete" title="delete hero"
+        (click)="delete(hero)">x</button> -->
+    </li>
+  </ul>
+</div>
+<div class="loading" *ngIf="loading">
+  <div class="loader">Loading...</div>
+</div>
